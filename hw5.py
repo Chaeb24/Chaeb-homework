@@ -1,34 +1,36 @@
-def read_single_digit(a,b,c):
+def read_single_digit(a):
     if a ==0 :
-        return '영'
+        print('영', end=' ')
     elif a == 1:
-        return '일'
+        print('일', end=' ')
     elif a == 2:
-        return '이'
+        print('이', end=' ')
     elif a == 3:
-        return '삼'
+        print('삼', end=' ')
     elif a ==  4:
-        return '사'
+         print('사', end=' ')
     elif a == 5:
-        return '오'
+         print('오', end=' ')
     elif a == 6:
-        return '육'
+         print('육', end=' ')
     elif a == 7:
-        return '칠'
+         print('칠', end=' ')
     elif a ==8:
-        return '팔'
+         print('팔', end=' ')
     else:
-        return '구'
+         print('구', end=' ')
 
 def read_number(n):
-    res = n//100
-    d = n%100//10
-    c = n%100%10
-    return read_single_digit(res,d,c)
+    d1 = n%10
+    n //=10
+    d10 = n%10
+    n //=10
+    read_single_digit(n)
+    read_single_digit(d10)
+    read_single_digit(d1)
     
 n = int(input('세 자리 정수 입력:'))
-ctype = read_number(n)
-print(f'{ctype}')
+read_number(n)
 
 
 
